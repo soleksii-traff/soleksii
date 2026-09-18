@@ -19,6 +19,8 @@
   --sans:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
   --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
   --gut:clamp(16px,4vw,56px);
+  --cut:url("img/portrait-cut.webp");
+  --bgos:url("img/bg-os.jpg");
   --grain:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0.14 0 0 0 0 0.13 0 0 0 0 0.12 0 0 0 .55 0'/%3E%3C/filter%3E%3Crect width='220' height='220' filter='url(%23n)'/%3E%3C/svg%3E");
   color-scheme:light;
 }
@@ -41,6 +43,7 @@ a{color:inherit}
 .paint::before{content:"";position:absolute;left:-.04em;right:-.04em;top:.02em;bottom:.04em;background:var(--wine);z-index:-1;
   clip-path:polygon(0.8% 6%,99.2% 0%,100% 92%,0% 100%);
   transform:scaleX(0);transform-origin:left center;animation:swipe .55s .3s cubic-bezier(.65,0,.2,1) forwards}
+.hero h1 .paint::after{display:none}
 .paint::after{content:"";position:absolute;left:-.04em;right:-.04em;bottom:-.1em;height:2px;background:var(--wine);z-index:-1;opacity:.45;
   transform:scaleX(0);transform-origin:left center;animation:swipe .55s .42s cubic-bezier(.65,0,.2,1) forwards}
 @keyframes swipe{to{transform:scaleX(1)}}
@@ -239,11 +242,13 @@ a{color:inherit}
 .strat .btn.p:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
 
 /* ABOUT */
-.about .collage{grid-column:1/7;position:relative;height:clamp(460px,48vw,680px)}
-.about .a1{position:absolute;left:4%;top:4%;width:62%;aspect-ratio:3/4;transform:rotate(-5deg)}
-.about .a2{position:absolute;right:2%;bottom:0;width:48%;aspect-ratio:4/5;transform:rotate(6deg)}
-.about .a1 .tape{top:-12px;left:36%;transform:rotate(-6deg)}
-.about .a2 .tape{bottom:-10px;right:20%;transform:rotate(10deg)}
+.about .stage{grid-column:1/7;position:relative;aspect-ratio:3/4}
+.about .stage .frame{position:absolute;inset:0;overflow:hidden;box-shadow:0 26px 50px -30px rgba(36,35,33,.55)}
+.about .stage .bgp{position:absolute;inset:0;background:var(--bgos) center/cover no-repeat}
+.about .stage .fig{position:absolute;left:3%;right:3%;top:7%;bottom:0;background:var(--cut) center bottom/contain no-repeat;filter:drop-shadow(0 26px 44px rgba(36,35,33,.3))}
+.about .stage .cap{position:absolute;left:14px;right:14px;bottom:12px;z-index:3;color:rgba(36,35,33,.55);font:500 clamp(8px,2.4vw,10px)/1.2 var(--mono);letter-spacing:.12em;text-transform:uppercase}
+.about .stage .tape{top:-14px;left:50%;margin-left:-60px;transform:rotate(-3deg)}
+.about .stage .tape.t2{top:auto;bottom:-12px;left:auto;right:12%;margin-left:0;transform:rotate(6deg)}
 .about .txt{grid-column:8/13;align-self:center;display:flex;flex-direction:column;gap:24px}
 .about h2{font-size:clamp(60px,8vw,130px)}
 .about .txt p{margin:0;max-width:48ch}
@@ -326,9 +331,7 @@ footer .lbl{color:#b39c83}
   .prow{grid-template-columns:44px 1fr;gap:8px 12px}
   .prow p{grid-column:2}
   .strat .poster{margin-bottom:56px}
-  .about .collage{height:112vw;max-height:520px;margin-bottom:40px;overflow:visible}
-  .about .a1{left:0;top:2%;width:58%}
-  .about .a2{right:0;bottom:2%;width:44%}
+  .about .stage{aspect-ratio:4/5;margin-bottom:36px}
   .pains .notes{grid-template-columns:1fr}
   .note-c:nth-child(n){transform:rotate(-1deg)}
   .pains .notes{row-gap:28px}
@@ -520,9 +523,14 @@ footer .lbl{color:#b39c83}
 <section class="sec about torn" id="about">
   <div class="edge" style="top:-1px"><svg viewBox="0 0 1200 60" preserveAspectRatio="none"><path class="tearWine" fill="#641F2A"/></svg></div>
   <div class="wrap g">
-    <div class="collage">
-      <div class="ph a1"><span class="tape"></span><div class="pat">Alexey Alexey Alexey<br>Alexey Alexey Alexey<br>Alexey Alexey Alexey<br>Alexey Alexey Alexey<br>Alexey Alexey Alexey</div><div class="band"></div><div class="fig"></div><div class="note">Портрет · half-body · очки</div></div>
-      <div class="ph a2"><span class="tape"></span><div class="pat">Barcelona Barcelona<br>Barcelona Barcelona<br>Barcelona Barcelona<br>Barcelona Barcelona</div><div class="note">Фото · улица / кафе</div></div>
+    <div class="stage">
+      <div class="frame">
+        <div class="bgp"></div>
+        <div class="fig"></div>
+        <span class="cap">Barcelona · 2026</span>
+      </div>
+      <span class="tape"></span>
+      <span class="tape t2"></span>
     </div>
     <div class="txt">
       <span class="lbl w">Алексей Савченко · Meta Ads</span>
