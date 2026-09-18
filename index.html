@@ -36,11 +36,20 @@ a{color:inherit}
 .cross::before,.cross::after{content:"";position:absolute;background:var(--ink)}
 .cross::before{left:50%;top:0;bottom:0;width:1px}.cross::after{top:50%;left:0;right:0;height:1px}
 
-/* акцент: курсивом и цветом, без плашки */
-.paint{color:var(--wine);font-family:var(--ital);font-style:italic;font-weight:600;text-transform:none;letter-spacing:-.01em;font-size:1.04em;padding-right:.04em;display:inline-block;
-  clip-path:inset(0 100% 0 0);animation:reveal .6s .25s cubic-bezier(.65,0,.2,1) forwards}
-@keyframes reveal{to{clip-path:inset(0 -6% 0 0)}}
-.appr h2 .paint,.final h2 .paint{color:#d59aa2}
+/* акцентная плашка под словом */
+.paint{position:relative;display:inline-block;color:var(--paper);z-index:0;padding:0 .16em}
+.paint::before{content:"";position:absolute;left:-.04em;right:-.04em;top:.02em;bottom:.04em;background:var(--wine);z-index:-1;
+  clip-path:polygon(0.8% 6%,99.2% 0%,100% 92%,0% 100%);
+  transform:scaleX(0);transform-origin:left center;animation:swipe .55s .3s cubic-bezier(.65,0,.2,1) forwards}
+.paint::after{content:"";position:absolute;left:-.04em;right:-.04em;bottom:-.1em;height:2px;background:var(--wine);z-index:-1;opacity:.45;
+  transform:scaleX(0);transform-origin:left center;animation:swipe .55s .42s cubic-bezier(.65,0,.2,1) forwards}
+@keyframes swipe{to{transform:scaleX(1)}}
+.paint.it{font-family:var(--ital);font-style:italic;font-weight:700;text-transform:none;letter-spacing:-.005em;font-size:.92em;padding:0 .18em;line-height:1}
+.paint.it::before{top:-.06em;bottom:.02em}
+.paint.it::after{bottom:-.12em}
+.paint.it{font-family:var(--ital);font-style:italic;font-weight:700;text-transform:none;letter-spacing:-.005em;font-size:.92em;padding:0 .18em;line-height:1}
+.paint.it::before{top:-.06em;bottom:.02em}
+.paint.it::after{bottom:-.12em}
 .wine{color:var(--wine)}
 
 /* tape */
