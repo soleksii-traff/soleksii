@@ -36,15 +36,17 @@ a{color:inherit}
 .cross::before,.cross::after{content:"";position:absolute;background:var(--ink)}
 .cross::before{left:50%;top:0;bottom:0;width:1px}.cross::after{top:50%;left:0;right:0;height:1px}
 
-/* paint stroke behind words */
-.paint{position:relative;display:inline-block;color:var(--paper);z-index:0;padding:0 .06em}
-.paint::before{content:"";position:absolute;left:-.13em;right:-.15em;top:-.02em;bottom:-.06em;background:var(--wine);z-index:-1;
-  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 100' preserveAspectRatio='none'%3E%3Cfilter id='r'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.04 .5' numOctaves='3' seed='4'/%3E%3CfeDisplacementMap in='SourceGraphic' scale='22'/%3E%3C/filter%3E%3Crect x='10' y='10' width='380' height='80' filter='url(%23r)'/%3E%3C/svg%3E") center/100% 100% no-repeat;
-          mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 100' preserveAspectRatio='none'%3E%3Cfilter id='r'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.04 .5' numOctaves='3' seed='4'/%3E%3CfeDisplacementMap in='SourceGraphic' scale='22'/%3E%3C/filter%3E%3Crect x='10' y='10' width='380' height='80' filter='url(%23r)'/%3E%3C/svg%3E") center/100% 100% no-repeat;
-  transform:rotate(-1.2deg) scaleX(0);transform-origin:left center;animation:swipe .7s .35s cubic-bezier(.7,0,.2,1) forwards}
-@keyframes swipe{to{transform:rotate(-1.2deg) scaleX(1)}}
-.paint.it{font-family:var(--ital);font-style:italic;font-weight:700;text-transform:none;letter-spacing:-.005em;font-size:.86em;padding:0 .12em;line-height:1}
-.paint.it::before{top:-.12em;bottom:-.3em;left:-.17em;right:-.21em}
+/* акцентная плашка под словом */
+.paint{position:relative;display:inline-block;color:var(--paper);z-index:0;padding:0 .16em}
+.paint::before{content:"";position:absolute;left:-.04em;right:-.04em;top:.02em;bottom:.04em;background:var(--wine);z-index:-1;
+  clip-path:polygon(0.8% 6%,99.2% 0%,100% 92%,0% 100%);
+  transform:scaleX(0);transform-origin:left center;animation:swipe .55s .3s cubic-bezier(.65,0,.2,1) forwards}
+.paint::after{content:"";position:absolute;left:-.04em;right:-.04em;bottom:-.1em;height:2px;background:var(--wine);z-index:-1;opacity:.45;
+  transform:scaleX(0);transform-origin:left center;animation:swipe .55s .42s cubic-bezier(.65,0,.2,1) forwards}
+@keyframes swipe{to{transform:scaleX(1)}}
+.paint.it{font-family:var(--ital);font-style:italic;font-weight:700;text-transform:none;letter-spacing:-.005em;font-size:.92em;padding:0 .18em;line-height:1}
+.paint.it::before{top:-.06em;bottom:.02em}
+.paint.it::after{bottom:-.12em}
 .wine{color:var(--wine)}
 
 /* tape */
@@ -104,11 +106,11 @@ a{color:inherit}
 @keyframes pulse{50%{opacity:.3}}
 
 /* ticker */
-.tickwrap{overflow:hidden;position:relative;z-index:5;padding-block:14px}
-.ticker{background:var(--ink);color:var(--paper);overflow:hidden;transform:rotate(-1.5deg);width:calc(100% + 60px);margin:-30px -30px 0;position:relative;border-block:1px solid var(--ink)}
+.tickwrap{overflow:hidden;position:relative;z-index:5}
+.ticker{background:var(--ink);color:var(--paper);overflow:hidden;position:relative;width:100%}
 .ticker .tr{display:flex;width:max-content;animation:tick 40s linear infinite}
-.ticker span{font:800 clamp(24px,2.6vw,38px)/1 var(--disp);text-transform:uppercase;padding:18px 0;white-space:nowrap}
-.ticker i{display:inline-block;width:1.05em;height:1.05em;margin:0 30px;vertical-align:-.12em;background:#c58d95;-webkit-mask:var(--sunmask) center/contain no-repeat;mask:var(--sunmask) center/contain no-repeat}
+.ticker span{font:800 clamp(20px,2.2vw,30px)/1 var(--disp);text-transform:uppercase;letter-spacing:.02em;padding:20px 0;white-space:nowrap}
+.ticker i{display:inline-block;width:.8em;height:.8em;margin:0 26px;vertical-align:-.12em;background:#c58d95;-webkit-mask:var(--sunmask) center/contain no-repeat;mask:var(--sunmask) center/contain no-repeat}
 @keyframes tick{to{transform:translateX(-50%)}}
 
 /* PAINS — torn notes */
@@ -156,8 +158,8 @@ a{color:inherit}
 .circ small{display:block;font:500 10px/1.4 var(--mono);letter-spacing:.1em;text-transform:uppercase;margin-top:8px;opacity:.7}
 .circ.f{background:var(--paper);color:var(--ink)}
 .circ.o{background:var(--tob);color:#221c15}
-.circ.t{border:1px solid #b99a76;color:#e6c79b}
-.circ.t small{opacity:.9}
+.circ.t{background:var(--tob);color:#211b14}
+.circ.t small{opacity:.75}
 .circ.w{background:var(--wine);color:var(--paper)}
 .c-1{width:22%;aspect-ratio:1;left:2%;top:12%}
 .c-2{width:15%;aspect-ratio:1;left:25%;top:52%}
@@ -383,13 +385,12 @@ footer .lbl{color:#b39c83}
   <header class="hero g">
     <span class="cross c1"></span><span class="cross c2"></span>
     <div class="marks rv"><span class="lbl w">Meta Ads</span><span class="lbl w">Strategy</span><span class="lbl w">Creative</span><span class="lbl w">Analytics</span></div>
-    <h1 class="disp rv d1">Реклама начинается с&nbsp;<span class="paint it">Понимания</span> ваших клиентов</h1>
+    <h1 class="disp rv d1">Реклама начинается с&nbsp;<span class="paint it">понимания</span> ваших клиентов</h1>
     <div class="bottom">
-      <p class="lead rv d2">Прежде чем приступать к запуску, изучаю ЦА и разбираюсь, <b>почему люди выбирают именно ваш продукт</b>. На этом строится стратегия, которая приводит заявки и продажи.</p>
+      <p class="lead rv d2">Не угадываю, а разбираюсь, <b>что заставляет людей покупать конкретно ваш продукт</b>. Построю стратегию, которая даёт лиды, а не просто клики.</p>
       <div class="cta rv d3">
         <a class="btn p" href="#contact">Написать в Telegram <span class="ar">→</span></a>
         <a class="btn s wa" href="#contact">WhatsApp</a>
-        <span class="avail"><span class="dot"></span>Всегда на связи, отвечаю быстро</span>
       </div>
     </div>
   </header>
@@ -508,7 +509,7 @@ footer .lbl{color:#b39c83}
     </div>
     <div class="txt">
       <span class="lbl w">Алексей Савченко · Meta Ads</span>
-      <h2 class="disp">Обо <span class="paint it">Мне</span></h2>
+      <h2 class="disp">Обо <span class="paint it">мне</span></h2>
       <p class="big">Performance-маркетолог. Психология, креатив и цифры в одной работе.</p>
       <p>Я успел поработать со множеством ниш и проектами из разных стран, поэтому привык быстро погружаться в новый рынок и видеть специфику каждого бизнеса.</p>
       <p>Мне нравится работать со сложными задачами, искать нестандартные подходы и превращать идеи в работающие системы.</p>
@@ -522,7 +523,7 @@ footer .lbl{color:#b39c83}
 <section class="sec rev torn">
   <div class="edge" style="top:-1px"><svg viewBox="0 0 1200 60" preserveAspectRatio="none"><path class="tearPaper" fill="#F4F0E8"/></svg></div>
   <div class="wrap g">
-    <h2 class="disp">Что говорят <span class="paint it">Клиенты</span></h2>
+    <h2 class="disp">Что говорят <span class="paint it">клиенты</span></h2>
     <div class="slots">
       <div class="slot"><span class="tape"></span><span class="lbl">Отзыв 01</span><p>Скриншот переписки</p></div>
       <div class="slot"><span class="tape"></span><span class="lbl">Отзыв 02</span><p>Скриншот переписки</p></div>
@@ -561,7 +562,6 @@ footer .lbl{color:#b39c83}
           <a class="btn p" href="#contact">Telegram <span class="ar">→</span></a>
           <a class="btn s wa" href="#contact">WhatsApp</a>
         </div>
-        <span class="avail"><span class="dot"></span>Всегда на связи, отвечаю быстро</span>
       </div>
     </div>
   </div>
