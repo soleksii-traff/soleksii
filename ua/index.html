@@ -53,12 +53,12 @@ a{color:inherit}
 .paint::after{content:"";position:absolute;left:-.04em;right:-.04em;bottom:-.1em;height:2px;background:var(--wine);z-index:-1;opacity:.45;
   transform:scaleX(0);transform-origin:left center;animation:swipe .55s .42s cubic-bezier(.65,0,.2,1) forwards}
 @keyframes swipe{to{transform:scaleX(1)}}
-.paint.it{position:relative;top:-.03em;font-family:var(--ital);font-style:italic;font-weight:700;text-transform:none;letter-spacing:-.005em;font-size:.92em;padding:0 .18em;line-height:1}
-.paint.it::before{top:-.06em;bottom:.02em}
-.paint.it::after{bottom:-.12em}
-.paint.it{position:relative;top:-.03em;font-family:var(--ital);font-style:italic;font-weight:700;text-transform:none;letter-spacing:-.005em;font-size:.92em;padding:0 .18em;line-height:1}
-.paint.it::before{top:-.06em;bottom:.02em}
-.paint.it::after{bottom:-.12em}
+.paint.it{position:relative;top:-.07em;font-family:var(--ital);font-style:italic;font-weight:700;text-transform:none;letter-spacing:-.005em;font-size:.92em;padding:0 .18em;line-height:1}
+.paint.it::before{top:.01em;bottom:-.05em}
+.paint.it::after{bottom:-.19em}
+.paint.it{position:relative;top:-.07em;font-family:var(--ital);font-style:italic;font-weight:700;text-transform:none;letter-spacing:-.005em;font-size:.92em;padding:0 .18em;line-height:1}
+.paint.it::before{top:.01em;bottom:-.05em}
+.paint.it::after{bottom:-.19em}
 .wine{color:var(--wine)}
 
 /* tape */
@@ -386,6 +386,7 @@ footer .lbl{color:#b39c83}
   .slot .tape{width:80px;margin-left:-40px}
 }
 @media (min-width:821px){.rev h2{white-space:nowrap}}
+@media (max-width:820px){.rev h2 .paint{display:block;width:-moz-fit-content;width:fit-content;margin-left:auto}}
 @media (prefers-reduced-motion:reduce){.rv,.dot,.star,.ticker .tr{animation:none}.paint::before{animation:none;transform:rotate(-1.2deg)}*{transition:none!important}html{scroll-behavior:auto}}
 
 @media (max-width:820px){
