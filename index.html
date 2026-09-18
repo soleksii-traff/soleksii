@@ -25,10 +25,7 @@
 *{box-sizing:border-box}
 html{scroll-behavior:smooth;overflow-x:clip;max-width:100%}
 body{background:var(--paper);color:var(--ink);font:400 16px/1.6 var(--sans);margin:0;-webkit-font-smoothing:antialiased;overflow-x:clip;max-width:100%;position:relative}
-/* зерно — только на тёмных блоках */
-.grainy{position:relative}
-.grainy::after{content:"";position:absolute;inset:0;background:var(--grain);opacity:.5;mix-blend-mode:screen;pointer-events:none;z-index:1}
-.grainy > *{position:relative;z-index:2}
+body::before{content:"";position:fixed;inset:0;background:var(--grain);opacity:.16;pointer-events:none;z-index:50;mix-blend-mode:multiply}
 a{color:inherit}
 .wrap{max-width:1440px;margin:0 auto;padding-inline:var(--gut);position:relative}
 .g{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:24px}
@@ -393,7 +390,7 @@ footer .lbl{color:#b39c83}
   </header>
 </div>
 
-<div class="tickwrap"><div class="ticker grainy" aria-hidden="true"><div class="tr">
+<div class="tickwrap"><div class="ticker" aria-hidden="true"><div class="tr">
   <span class="tline">Полный аудит<i></i>Анализ ЦА<i></i>Стратегия<i></i>Креативы<i></i>Воронки<i></i>CRM<i></i>Аналитика<i></i>Отчётность<i></i>Масштабирование<i></i></span>
   <span class="tline">Полный аудит<i></i>Анализ ЦА<i></i>Стратегия<i></i>Креативы<i></i>Воронки<i></i>CRM<i></i>Аналитика<i></i>Отчётность<i></i>Масштабирование<i></i></span>
 </div></div></div>
@@ -410,7 +407,7 @@ footer .lbl{color:#b39c83}
 </div></section>
 
 <!-- APPROACH -->
-<section class="grainy sec appr torn" id="approach">
+<section class="sec appr torn" id="approach">
   <div class="edge" style="top:-1px"><svg viewBox="0 0 1200 60" preserveAspectRatio="none"><path id="tearTop" fill="#F4F0E8"/></svg></div>
   <div class="wrap g">
     <h2 class="disp">Сначала люди.<br><span class="paint it">Потом реклама.</span></h2>
@@ -478,7 +475,7 @@ footer .lbl{color:#b39c83}
 </div></section>
 
 <!-- STRATEGY -->
-<section class="grainy sec strat torn">
+<section class="sec strat torn">
   <div class="edge" style="top:-1px"><svg viewBox="0 0 1200 60" preserveAspectRatio="none"><path class="tearPaper" fill="#F4F0E8"/></svg></div>
   <div class="wrap g">
     <div class="poster"><div class="card-p"><span class="tape"></span><span class="lbl" style="position:relative;color:#b39c83">Бесплатно · до оплаты</span><h2 class="disp" style="margin-top:18px">Стратегия <span>без обязательств</span></h2></div></div>
@@ -547,7 +544,7 @@ footer .lbl{color:#b39c83}
 </section>
 
 <!-- FINAL -->
-<section class="grainy final torn" id="contact">
+<section class="final torn" id="contact">
   <div class="edge" style="top:-1px"><svg viewBox="0 0 1200 60" preserveAspectRatio="none"><path class="tearPaper" fill="#F4F0E8"/></svg></div>
   <div class="wrap g">
     <span class="lbl" style="grid-column:1/13;color:#b39c83;margin-bottom:20px">Последний шаг</span>
@@ -563,7 +560,7 @@ footer .lbl{color:#b39c83}
     </div>
   </div>
 </section>
-<footer class="grainy"><div class="wrap"><span class="lbl">Алексей Савченко · Meta Ads</span><span class="lbl">© 2026</span></div></footer>
+<footer><div class="wrap"><span class="lbl">Алексей Савченко · Meta Ads</span><span class="lbl">© 2026</span></div></footer>
 </div><!-- /#page -->
 
 <div class="bar">
