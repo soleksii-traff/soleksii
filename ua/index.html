@@ -53,10 +53,10 @@ a{color:inherit}
 .paint::after{content:"";position:absolute;left:-.04em;right:-.04em;bottom:-.1em;height:2px;background:var(--wine);z-index:-1;opacity:.45;
   transform:scaleX(0);transform-origin:left center;animation:swipe .55s .42s cubic-bezier(.65,0,.2,1) forwards}
 @keyframes swipe{to{transform:scaleX(1)}}
-.paint.it{font-family:var(--ital);font-style:italic;font-weight:700;text-transform:none;letter-spacing:-.005em;font-size:.92em;padding:0 .18em;line-height:1}
+.paint.it{position:relative;top:-.03em;font-family:var(--ital);font-style:italic;font-weight:700;text-transform:none;letter-spacing:-.005em;font-size:.92em;padding:0 .18em;line-height:1}
 .paint.it::before{top:-.06em;bottom:.02em}
 .paint.it::after{bottom:-.12em}
-.paint.it{font-family:var(--ital);font-style:italic;font-weight:700;text-transform:none;letter-spacing:-.005em;font-size:.92em;padding:0 .18em;line-height:1}
+.paint.it{position:relative;top:-.03em;font-family:var(--ital);font-style:italic;font-weight:700;text-transform:none;letter-spacing:-.005em;font-size:.92em;padding:0 .18em;line-height:1}
 .paint.it::before{top:-.06em;bottom:.02em}
 .paint.it::after{bottom:-.12em}
 .wine{color:var(--wine)}
@@ -176,7 +176,7 @@ a{color:inherit}
 .appr .reveal-box{grid-column:1/13;padding-top:26px;display:grid;grid-template-columns:180px minmax(0,1fr);gap:28px;align-items:start}
 .appr .rlabel{color:#c58d95;padding-top:8px}
 .appr .rtext p{margin:0;color:rgba(244,240,232,.85);max-width:62ch}
-.appr .rtext p.big{font:800 clamp(24px,2.6vw,40px)/1.04 var(--disp);text-transform:uppercase;color:var(--paper);max-width:20ch;text-wrap:balance}
+.appr .rtext p.big{font:800 clamp(24px,2.6vw,40px)/1.06 var(--disp);text-transform:uppercase;color:var(--paper);max-width:30ch;text-wrap:balance}
 .appr .rtext p+p{margin-top:14px}
 .appr .rtext.anim{animation:wipe .55s cubic-bezier(.3,.7,.2,1) both}
 @keyframes wipe{from{clip-path:inset(0 100% 0 0);transform:translateY(10px)}to{clip-path:inset(0 0 0 0);transform:none}}
@@ -286,17 +286,17 @@ a{color:inherit}
 
 /* FINAL */
 .final{background:var(--ink);color:var(--paper);padding-block:clamp(120px,14vw,200px) clamp(60px,8vw,100px)}
-.final h2{grid-column:1/13;font-size:clamp(70px,13.8vw,238px)}
+.final h2{grid-column:1/13;font-size:clamp(56px,9.6vw,168px)}
 .final h2 .paint{color:var(--paper)}
 .final .row{grid-column:1/13;display:flex;flex-direction:column;align-items:flex-start;gap:28px;margin-top:48px}
-.final p{margin:0;max-width:440px;font-size:clamp(19px,1.7vw,23px);line-height:1.5;color:rgba(244,240,232,.86)}
+.final p{margin:0;max-width:640px;font-size:clamp(19px,1.7vw,23px);line-height:1.5;color:rgba(244,240,232,.86)}
 .final .btn.p{background:var(--paper);color:var(--ink);border-color:var(--paper)}
 .final .btn.p:hover{background:var(--wine);color:var(--paper);border-color:var(--wine)}
 .final .btn.s{color:var(--paper);border-color:var(--paper)}
 .final .btn.wa{color:#e4c9cd;border-color:#c58d95}
 .final .btn.wa:hover{background:var(--wine);border-color:var(--wine);color:var(--paper)}
 .final .avail{color:rgba(244,240,232,.6);justify-content:flex-start;margin-top:14px}
-.final .actions{display:flex;flex-direction:column;align-items:stretch;width:100%;max-width:440px}
+.final .actions{display:flex;flex-direction:column;align-items:stretch;width:100%;max-width:640px}
 .final .actions .btns{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .final .actions .btn{justify-content:center;padding-block:19px;font-size:15px}
 footer{background:var(--ink);color:var(--paper)}
@@ -361,7 +361,7 @@ footer .lbl{color:#b39c83}
   .about h2{font-size:clamp(48px,14vw,94px)}
   .rev h2{font-size:clamp(38px,11.5vw,78px)}
   .faq h2{font-size:clamp(34px,9.6vw,64px)}
-  .final h2{font-size:clamp(52px,16vw,118px)}
+  .final h2{font-size:clamp(44px,13.5vw,100px)}
   .card h3{font-size:clamp(28px,7.6vw,44px)}
   .prow h3{font-size:clamp(26px,7vw,40px)}
   .note-c h3{font-size:clamp(26px,7vw,38px)}
@@ -462,7 +462,7 @@ footer .lbl{color:#b39c83}
     <div class="reveal-line"></div>
     <div class="reveal-box" id="revealBox" aria-live="polite">
       <div class="rlabel lbl" id="revealLabel">Точка впливу</div>
-      <div class="rtext" id="revealText"><p class="big">Спочатку я знаходжу точку впливу. Потім скеровую туди рекламний бюджет.</p></div>
+      <div class="rtext" id="revealText"><p class="big">Насамперед я знаходжу точку впливу. Потім скеровую туди рекламний бюджет.</p></div>
     </div>
   </div>
 </section>
@@ -711,7 +711,7 @@ function initPage(){
       run:['Запуск','Тільки після проходження всіх попередніх етапів я запускаю рекламу.|До цього моменту я вже розумію: кому → яку проблему → яке рішення → яким повідомленням → через який креатив → навіщо показувати.|Тому запуск для мене — це не спроба «подивитися, що зайде». Це перевірка конкретних гіпотез реальними даними.']
     };
     var box=document.getElementById('revealText'),lab=document.getElementById('revealLabel'),btns=[].slice.call(document.querySelectorAll('.circ'));
-    var start='<p class="big">Спочатку я знаходжу точку впливу. Потім скеровую туди рекламний бюджет.</p>';
+    var start='<p class="big">Насамперед я знаходжу точку впливу. Потім скеровую туди рекламний бюджет.</p>';
     function show(k,btn){
       var open=btn.getAttribute('aria-pressed')==='true';
       btns.forEach(function(b){b.setAttribute('aria-pressed','false')});
