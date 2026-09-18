@@ -8,10 +8,10 @@
 <meta property="og:description" content="Реклама начинается с понимания ваших клиентов.">
 <meta property="og:type" content="website">
 <title>Олексій Савченко — Meta Ads</title>
-<link rel="icon" href="img/favicon.svg?v=4" type="image/svg+xml">
-<link rel="icon" href="img/favicon-32.png?v=4" sizes="32x32">
-<link rel="icon" href="img/favicon-64.png?v=4" sizes="64x64">
-<link rel="apple-touch-icon" href="img/apple-touch-icon.png?v=4">
+<link rel="icon" href="img/favicon.svg?v=5" type="image/svg+xml">
+<link rel="icon" href="img/favicon-32.png?v=5" sizes="32x32">
+<link rel="icon" href="img/favicon-64.png?v=5" sizes="64x64">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png?v=5">
 <meta name="theme-color" content="#F4F0E8">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,600;1,700&family=Sofia+Sans+Extra+Condensed:ital,wght@0,700;0,800;0,900;1,800&family=Manrope:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
@@ -30,8 +30,9 @@
   color-scheme:light;
 }
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;overflow-x:clip;max-width:100%}
-body{background:var(--paper);color:var(--ink);font:400 16px/1.6 var(--sans);margin:0;-webkit-font-smoothing:antialiased;overflow-x:clip;max-width:100%;position:relative}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font:400 16px/1.6 var(--sans);margin:0;-webkit-font-smoothing:antialiased;position:relative}
+#page{overflow-x:clip}
 body::before{content:"";position:fixed;inset:0;background:var(--grain);opacity:.16;pointer-events:none;z-index:50;mix-blend-mode:multiply}
 a{color:inherit}
 .wrap{max-width:1440px;margin:0 auto;padding-inline:var(--gut);position:relative}
@@ -522,7 +523,7 @@ footer .lbl{color:#b39c83}
         <li><span class="lbl">04</span><div><b>Гипотезы</b><span>С каких идей и креативов начинаем.</span></div></li>
         <li><span class="lbl">05</span><div><b>Прогноз KPI</b><span>Ожидаемая стоимость лидов и окупаемость рекламы.</span></div></li>
       </ul>
-      <a class="btn p" href="https://t.me/savleksi" target="_blank" rel="noopener">Получить стратегию <span class="ar">→</span></a>
+      <a class="btn p" href="#contact">Получить стратегию <span class="ar">→</span></a>
     </div>
   </div>
 </section>
@@ -606,7 +607,7 @@ footer .lbl{color:#b39c83}
   <div class="sun" aria-hidden="true">
     <svg viewBox="0 0 100 100"><g class="rays"><path id="sunPath" fill="#641F2A"/></g><text x="50" y="50" text-anchor="middle" dominant-baseline="central" class="os">OS</text></svg>
   </div>
-  <a class="btn w" href="https://t.me/savleksi" target="_blank" rel="noopener">Бесплатная стратегия</a>
+  <a class="btn w" href="#contact">Бесплатная стратегия</a>
 </div>
 
 <script>
@@ -632,6 +633,35 @@ function initPage(){
     d+='Z';el.setAttribute('d',d);
     var svg="<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><path d='"+d+"' fill='%23000'/></svg>";
     document.documentElement.style.setProperty('--sunmask','url("data:image/svg+xml,'+svg.replace(/</g,'%3C').replace(/>/g,'%3E').replace(/"/g,"'").replace(/#/g,'%23')+'")');
+  })();
+
+  /* плавный переход по якорям */
+  (function(){ /* anchor-scroll */
+    function go(el){
+      var reduce=window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+      if(reduce){window.scrollTo(0,el.getBoundingClientRect().top+window.scrollY);return}
+      var start=window.scrollY, t0=null, dur=900;
+      function step(ts){
+        if(t0===null)t0=ts;
+        var p=Math.min(1,(ts-t0)/dur);
+        var e=p<.5?4*p*p*p:1-Math.pow(-2*p+2,3)/2;      // мягкий разгон и торможение
+        var target=el.getBoundingClientRect().top+window.scrollY; // пересчёт: высота блоков меняется на ходу
+        window.scrollTo(0, start+(target-start)*e);
+        if(p<1)requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+      setTimeout(function(){ // страховка, если кадры не идут (фоновая вкладка)
+        var target=el.getBoundingClientRect().top+window.scrollY;
+        if(Math.abs(target-window.scrollY)>6)window.scrollTo(0,target);
+      }, dur+120);
+    }
+    document.querySelectorAll('a[href^="#"]').forEach(function(a){
+      a.addEventListener('click',function(e){
+        var id=a.getAttribute('href').slice(1), el=id&&document.getElementById(id);
+        if(!el)return;
+        e.preventDefault(); go(el); history.replaceState(null,'','#'+id);
+      });
+    });
   })();
 
   /* появление «Знакомо?» по скроллу */
