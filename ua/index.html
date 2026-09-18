@@ -118,11 +118,11 @@ a{color:inherit}
 @keyframes pulse{50%{opacity:.3}}
 
 /* ticker */
-.tickwrap{overflow:hidden;position:relative;z-index:5;padding-block:clamp(16px,3.4vw,44px)}
+.tickwrap{position:relative;z-index:5;padding-block:clamp(18px,3.6vw,46px)}
 .ticker{background:var(--ink);color:var(--paper);overflow:hidden;position:relative;width:calc(100% + 120px);margin-inline:-60px;transform:rotate(-1.4deg) translateZ(0);backface-visibility:hidden;box-shadow:0 0 0 1px var(--ink);will-change:transform}
 .ticker .tr{display:flex;width:max-content;animation:tick 40s linear infinite}
-.ticker span{font:800 clamp(20px,2.2vw,30px)/1 var(--disp);text-transform:uppercase;letter-spacing:.02em;padding:20px 0;white-space:nowrap}
-.ticker i{display:inline-block;width:.8em;height:.8em;margin:0 26px;vertical-align:-.12em;background:#c58d95;-webkit-mask:var(--sunmask) center/contain no-repeat;mask:var(--sunmask) center/contain no-repeat}
+.ticker span{display:inline-flex;align-items:center;font:800 clamp(20px,2.2vw,30px)/1 var(--disp);text-transform:uppercase;letter-spacing:.02em;padding:20px 0;white-space:nowrap}
+.ticker i{display:block;flex:0 0 auto;width:1.15em;height:1.15em;margin:0 28px;background:#c58d95;-webkit-mask:var(--sunmask) center/contain no-repeat;mask:var(--sunmask) center/contain no-repeat}
 @keyframes tick{to{transform:translateX(-50%)}}
 
 /* PAINS — torn notes */
@@ -145,10 +145,10 @@ a{color:inherit}
 /* APPROACH */
 .appr{background:var(--ink);color:var(--paper)}
 .appr .lbl{color:#b39c83}
-.appr h2{grid-column:1/11;font-size:clamp(50px,8.2vw,138px)}
+.appr h2{grid-column:1/9;font-size:clamp(44px,7.3vw,124px)}
 .appr h2 .paint{white-space:nowrap}
 .appr h2 .paint{color:var(--paper)}
-.appr .story{grid-column:9/13;align-self:end;margin:0;padding:6px 0 6px 22px;border-left:2px solid var(--wine);color:rgba(244,240,232,.8);font-size:16px;line-height:1.6;max-width:46ch}
+.appr .story{grid-column:9/13;align-self:center;margin:0;padding:6px 0 6px 22px;border-left:2px solid var(--wine);color:rgba(244,240,232,.8);font-size:16px;line-height:1.6;max-width:46ch}
 .appr .story::first-line{color:var(--paper)}
 .appr .hint{position:absolute;left:17%;top:8px;display:flex;align-items:flex-start;gap:6px;z-index:2}
 .appr .hint svg{width:86px;height:36px}
