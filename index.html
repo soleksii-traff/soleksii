@@ -143,7 +143,21 @@ a{color:inherit}
 .appr .story::first-line{color:var(--paper)}
 .appr .hint{position:absolute;left:17%;top:8px;display:flex;align-items:flex-start;gap:6px;z-index:2}
 .appr .hint svg{width:86px;height:36px}
-.appr .hint span{font:800 22px/1 var(--disp);text-transform:uppercase;color:#c58d95;letter-spacing:.04em}
+.appr .hint span{font:800 22px/1 var(--disp);text-transform:uppercase;color:#c58d95;letter-spacing:.04em;display:inline-block;transform-origin:left center}
+.appr .hint.wiggle span{animation:wiggle 1.5s cubic-bezier(.36,.07,.19,.97) both}
+.appr .hint.wiggle svg{animation:wiggle 1.5s cubic-bezier(.36,.07,.19,.97) both}
+@keyframes wiggle{
+  0%,12%{transform:rotate(0) translateX(0)}
+  20%{transform:rotate(-7deg) translateX(-3px)}
+  28%{transform:rotate(6deg) translateX(3px)}
+  36%{transform:rotate(-5deg) translateX(-2px)}
+  44%{transform:rotate(4deg) translateX(2px)}
+  52%,60%{transform:rotate(0) translateX(0)}
+  68%{transform:rotate(-6deg) translateX(-3px)}
+  76%{transform:rotate(5deg) translateX(3px)}
+  84%{transform:rotate(-3deg) translateX(-1px)}
+  92%,100%{transform:rotate(0) translateX(0)}
+}
 .appr .circles{grid-column:1/13;position:relative;height:clamp(340px,38vw,500px);margin-top:clamp(56px,6vw,84px)}
 .circ{position:absolute;border-radius:50%;display:grid;place-items:center;text-align:center;padding:12px;transition:transform .6s cubic-bezier(.2,.7,.2,1),box-shadow .5s ease;font:inherit;cursor:pointer;border:0}
 .circ:hover{transform:scale(1.05)}
@@ -621,6 +635,23 @@ function initPage(){
       });
     },{rootMargin:'0px 0px -12% 0px',threshold:.15});
     items.forEach(function(el){io.observe(el)});
+  })();
+
+  /* «клоц» качается, когда блок появляется на экране */
+  (function(){
+    var hint=document.querySelector('.appr .hint');if(!hint)return;
+    if(!('IntersectionObserver' in window))return;
+    if(window.matchMedia&&window.matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+    var io=new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if(e.isIntersecting){
+          hint.classList.remove('wiggle');void hint.offsetWidth;hint.classList.add('wiggle');
+        }else{
+          hint.classList.remove('wiggle');
+        }
+      });
+    },{threshold:.6});
+    io.observe(hint);
   })();
 
   /* этапы подхода */
