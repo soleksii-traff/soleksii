@@ -118,8 +118,8 @@ a{color:inherit}
 @keyframes pulse{50%{opacity:.3}}
 
 /* ticker */
-.tickwrap{overflow:hidden;position:relative;z-index:5;padding-block:10px}
-.ticker{background:var(--ink);color:var(--paper);overflow:hidden;position:relative;width:calc(100% + 80px);margin-inline:-40px;transform:rotate(-1.4deg)}
+.tickwrap{overflow:hidden;position:relative;z-index:5;padding-block:clamp(16px,3.4vw,44px)}
+.ticker{background:var(--ink);color:var(--paper);overflow:hidden;position:relative;width:calc(100% + 120px);margin-inline:-60px;transform:rotate(-1.4deg) translateZ(0);backface-visibility:hidden;box-shadow:0 0 0 1px var(--ink);will-change:transform}
 .ticker .tr{display:flex;width:max-content;animation:tick 40s linear infinite}
 .ticker span{font:800 clamp(20px,2.2vw,30px)/1 var(--disp);text-transform:uppercase;letter-spacing:.02em;padding:20px 0;white-space:nowrap}
 .ticker i{display:inline-block;width:.8em;height:.8em;margin:0 26px;vertical-align:-.12em;background:#c58d95;-webkit-mask:var(--sunmask) center/contain no-repeat;mask:var(--sunmask) center/contain no-repeat}
