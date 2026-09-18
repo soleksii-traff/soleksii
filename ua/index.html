@@ -173,10 +173,10 @@ a{color:inherit}
 .circ[aria-pressed="true"]{box-shadow:0 0 0 2px var(--paper),0 0 0 6px rgba(197,141,149,.45)}
 .circ:focus-visible{outline:2px solid #c58d95;outline-offset:6px}
 .appr .reveal-line{grid-column:1/13;height:1px;background:rgba(244,240,232,.35);margin-top:clamp(24px,3vw,40px)}
-.appr .reveal-box{grid-column:1/13;padding-top:24px;display:grid;grid-template-columns:200px 1fr;gap:24px}
+.appr .reveal-box{grid-column:1/13;padding-top:26px;display:grid;grid-template-columns:180px minmax(0,1fr);gap:28px;align-items:start}
 .appr .rlabel{color:#c58d95;padding-top:8px}
 .appr .rtext p{margin:0;color:rgba(244,240,232,.85);max-width:62ch}
-.appr .rtext p.big{font:800 clamp(24px,2.6vw,40px)/1 var(--disp);text-transform:uppercase;color:var(--paper);max-width:24ch}
+.appr .rtext p.big{font:800 clamp(24px,2.6vw,40px)/1.04 var(--disp);text-transform:uppercase;color:var(--paper);max-width:20ch;text-wrap:balance}
 .appr .rtext p+p{margin-top:14px}
 .appr .rtext.anim{animation:wipe .55s cubic-bezier(.3,.7,.2,1) both}
 @keyframes wipe{from{clip-path:inset(0 100% 0 0);transform:translateY(10px)}to{clip-path:inset(0 0 0 0);transform:none}}
@@ -513,14 +513,14 @@ footer .lbl{color:#b39c83}
 <section class="sec strat torn">
   <div class="edge" style="top:-1px"><svg viewBox="0 0 1200 60" preserveAspectRatio="none"><path class="tearPaper" fill="#F4F0E8"/></svg></div>
   <div class="wrap g">
-    <div class="poster"><div class="card-p"><span class="tape"></span><span class="lbl" style="position:relative;color:#b39c83">Безкоштовно · до оплати</span><h2 class="disp" style="margin-top:18px">Стратегія <span>без зобов'язань</span></h2></div></div>
+    <div class="poster"><div class="card-p"><span class="tape"></span><span class="lbl" style="position:relative;color:#b39c83">Безкоштовно · до оплати</span><h2 class="disp" style="margin-top:18px">Стратегія <span>без зобов’язань</span></h2></div></div>
     <div class="right">
       <p class="lead">Ви отримуєте план ще до початку роботи, навіть якщо зрештою вирішите не співпрацювати.</p>
       <ul>
         <li><span class="lbl">01</span><div><b>Аналіз конкурентів</b><span>Що вже працює у вашій ніші і де є вільні місця.</span></div></li>
         <li><span class="lbl">02</span><div><b>Портрети аудиторії</b><span>Хто ваші покупці і що для них важливо.</span></div></li>
         <li><span class="lbl">03</span><div><b>Шлях клієнта (CJM)</b><span>Для кожного портрета: від першого контакту до покупки.</span></div></li>
-        <li><span class="lbl">04</span><div><b>Гіпотези</b><span>С каких идей и креативов начинаем.</span></div></li>
+        <li><span class="lbl">04</span><div><b>Гіпотези</b><span>З яких ідей і креативів починаємо.</span></div></li>
         <li><span class="lbl">05</span><div><b>Прогноз KPI</b><span>Очікувана вартість лідів і окупність реклами.</span></div></li>
       </ul>
       <a class="btn p" href="#contact">Отримати стратегію <span class="ar">→</span></a>
@@ -544,9 +544,9 @@ footer .lbl{color:#b39c83}
     <div class="txt">
       <span class="lbl w">Олексій Савченко · Meta Ads</span>
       <h2 class="disp">Про <span class="paint it">мене</span></h2>
-      <p class="big">Performance-маркетолог. Пов'язую психологію аудиторії, сильний креатив і аналітику в зрозумілу юніт-економіку.</p>
+      <p class="big">Performance-маркетолог. Пов’язую психологію аудиторії, сильний креатив і аналітику в зрозумілу <span style="white-space:nowrap">юніт-економіку</span>.</p>
       <p>Запускав рекламу клієнтам у США, ОАЕ, ЄС та Україні: від локальних послуг і медицини до авто та складних ніш.</p>
-      <p>Швидко зчитую специфіку локального ринку: не просто ллю трафік, а знаходжу сегменти з високим LTV і доводжу зв'язки до цільових показників CAC та ROI.</p>
+      <p>Швидко зчитую специфіку локального ринку: не просто ллю трафік, а знаходжу сегменти з високим LTV і доводжу зв’язки до цільових показників CAC та ROI.</p>
       <p>У рішеннях спираюся на наскрізну аналітику, підкріплюючи інтуїцію твердими цифрами.</p>
       <div class="not"><span class="lbl">Чого я не роблю</span><ul><li>Гучні обіцянки</li><li>Реклама без аналізу</li><li>Приховані цифри</li></ul></div>
     </div>
@@ -571,14 +571,14 @@ footer .lbl{color:#b39c83}
 <section class="sec faq torn" id="faq">
   <div class="edge" style="top:-1px"><svg viewBox="0 0 1200 60" preserveAspectRatio="none"><path class="tearPaper2" fill="#E9E3D8"/></svg></div>
   <div class="wrap g">
-    <div class="side"><span class="lbl w">FAQ</span><h2 class="disp" style="margin-top:16px">Часті <span class="wine">питання</span></h2></div>
+    <div class="side"><span class="lbl w">FAQ</span><h2 class="disp" style="margin-top:16px">Поширені <span class="wine">запитання</span></h2></div>
     <div class="list">
       <details open id="q1"><summary>Скільки коштує моя робота?</summary><p>Від 350 €. Точна вартість залежить від обсягу задач, назву її після дзвінка та брифу.</p></details>
       <details id="q2"><summary>Який потрібен рекламний бюджет?</summary><p>Оптимальний бюджет — від $150 на тиждень. Усе індивідуально: підберу стратегію під ваш бізнес і можливості.</p></details>
       <details id="q3"><summary>З якими нішами працюєте?</summary><p>З різними: медицина, послуги, авто, освіта, ремонт. Підхід універсальний, бо він починається з аналізу саме вашої аудиторії.</p></details>
       <details id="q4"><summary>Як я дізнаюся про результати?</summary><p>Щотижня надсилаю інформативний звіт документом і проводжу короткий дзвінок: що зроблено, які цифри, що робимо далі.</p></details>
       <details id="q5"><summary>З якими країнами працюєте?</summary><p>Налаштовую рекламу на будь-які гео, доступні в Meta Ads. У кейсах — клієнти з Іспанії, ОАЕ, США та України.</p></details>
-      <details id="q6"><summary>Коли будуть перші результати?</summary><p>Перші заявки зазвичай надходять протягом доби після запуску. Терміни стабільного результату залежать від ніші, бюджету на тести й того, як швидко знайдеться робоча зв'язка. Чесний прогноз дам після аналізу вашого проєкту, у безкоштовній стратегії.</p></details>
+      <details id="q6"><summary>Коли будуть перші результати?</summary><p>Перші заявки зазвичай надходять протягом доби після запуску. Терміни стабільного результату залежать від ніші, бюджету на тести й того, як швидко знайдеться робоча зв’язка. Чесний прогноз дам після аналізу вашого проєкту, у безкоштовній стратегії.</p></details>
     </div>
   </div>
 </section>
@@ -590,7 +590,7 @@ footer .lbl{color:#b39c83}
     <span class="lbl" style="grid-column:1/13;color:#b39c83;margin-bottom:20px">Останній крок</span>
     <h2 class="disp">Обговоримо ваш <span class="paint it">проєкт?</span></h2>
     <div class="row">
-      <p>Напишіть мені, поспілкуємося, і я підготую безкоштовну стратегію для вашого бізнесу.</p>
+      <p>Напишіть мені, поспілкуємося, та я підготую безкоштовну стратегію для вашого бізнесу.</p>
       <div class="actions">
         <div class="btns">
           <a class="btn p" href="https://t.me/savleksi" target="_blank" rel="noopener">Telegram <span class="ar">→</span></a>
@@ -707,7 +707,7 @@ function initPage(){
       an:['Аналіз','На цьому етапі вивчаю цільову аудиторію і конкурентів.|Я аналізую відгуки, коментарі, рекламні пропозиції та поведінку потенційних клієнтів, щоб знайти реальні болі, страхи, бажання, заперечення і тригери покупки.|Саме такі інсайти стають основою подальшої стратегії.'],
       por:['Портрети','Не можна розглядати цільову аудиторію як одну усереднену людину.|На основі аналізу я виділяю конкретні портрети клієнтів із різними проблемами, мотивацією та причинами для покупки.|Для кожного портрета я будую CJM — шлях клієнта від першого зіткнення з проблемою до покупки. У кожного він свій.'],
       hyp:['Гіпотези','Тепер можна припустити, що саме впливає на рішення кожного складеного портрета.|Гіпотеза будується за чіткою структурою: сегмент (особистість) + проблема (біль і страх) + рішення (офер) = очікуваний результат.'],
-      pri:['Пріоритети','Я не намагаюся одночасно перевірити все.|Оцінюю гіпотези за силою болю, мотивацією аудиторії, комерційним потенціалом і можливістю донести ідею через рекламу.|Після цього обираю гіпотезу, яку вважаю найперспективнішою для першого тесту, і під неї створюю креативи та рекламні зв'язки.|Спочатку визначаю, що тестувати — потім витрачаю гроші на тест. Тільки так.'],
+      pri:['Пріоритети','Я не намагаюся одночасно перевірити все.|Оцінюю гіпотези за силою болю, мотивацією аудиторії, комерційним потенціалом і можливістю донести ідею через рекламу.|Після цього обираю гіпотезу, яку вважаю найперспективнішою для першого тесту, і під неї створюю креативи та рекламні зв’язки.|Спочатку визначаю, що тестувати — потім витрачаю гроші на тест. Тільки так.'],
       run:['Запуск','Тільки після проходження всіх попередніх етапів я запускаю рекламу.|До цього моменту я вже розумію: кому → яку проблему → яке рішення → яким повідомленням → через який креатив → навіщо показувати.|Тому запуск для мене — це не спроба «подивитися, що зайде». Це перевірка конкретних гіпотез реальними даними.']
     };
     var box=document.getElementById('revealText'),lab=document.getElementById('revealLabel'),btns=[].slice.call(document.querySelectorAll('.circ'));
