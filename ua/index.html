@@ -179,6 +179,16 @@ a{color:inherit}
 .appr .rtext p.big{font:800 clamp(24px,2.6vw,40px)/1.06 var(--disp);text-transform:uppercase;color:var(--paper);max-width:30ch;text-wrap:balance}
 .appr .rtext p+p{margin-top:14px}
 .appr .rtext.anim{animation:wipe .55s cubic-bezier(.3,.7,.2,1) both}
+.appr .rnav{grid-column:2;display:none;align-items:center;gap:14px;margin-top:clamp(22px,2.6vw,34px)}
+.appr .rnav.on{display:flex}
+.appr .rnav button{background:none;border:0;padding:4px;margin:0;line-height:0;cursor:pointer;color:#e8bfc5;transition:color .3s ease,transform .3s cubic-bezier(.2,.7,.2,1),opacity .3s ease}
+.appr .rnav button svg{width:26px;height:26px;display:block}
+.appr .rnav button:hover:not([disabled]){color:#fff}
+.appr .rnav .pv:hover:not([disabled]){transform:translateX(-3px)}
+.appr .rnav .nx:hover:not([disabled]){transform:translateX(3px)}
+.appr .rnav button:focus-visible{outline:2px solid #c58d95;outline-offset:4px}
+.appr .rnav button[disabled]{opacity:.22;cursor:default}
+.appr .rnav .cnt{font:500 11px/1 var(--mono);letter-spacing:.16em;color:rgba(244,240,232,.45)}
 @keyframes wipe{from{clip-path:inset(0 100% 0 0);transform:translateY(10px)}to{clip-path:inset(0 0 0 0);transform:none}}
 .circ b{font:900 clamp(22px,2.4vw,36px)/.9 var(--disp);text-transform:uppercase;display:block}
 .circ small{display:block;font:500 10px/1.4 var(--mono);letter-spacing:.1em;text-transform:uppercase;margin-top:8px;opacity:.7}
@@ -274,7 +284,7 @@ a{color:inherit}
 
 
 .rev .swipe{display:none;grid-column:1/13}
-.rev .wall{grid-column:1/13;display:grid;grid-template-columns:minmax(0,1.24fr) minmax(0,1fr) minmax(0,1fr);gap:28px;align-items:start}
+.rev .wall{grid-column:1/13;display:grid;grid-template-columns:minmax(0,.78fr) minmax(0,1fr) minmax(0,1fr);gap:28px;align-items:start}
 .rev .col{display:flex;flex-direction:column;gap:30px;min-width:0}
 .slot{position:relative;margin:0;background:#fbf8f2;border:1px solid var(--line);padding:14px 14px 16px;box-shadow:0 22px 40px -28px rgba(36,35,33,.55)}
 .slot.big{transform:rotate(-.8deg)}
@@ -328,7 +338,7 @@ footer .lbl{color:#b39c83}
 
 @media (max-width:1000px){
   .pains .notes{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:48px}
-  .rev .wall{grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:22px}
+  .rev .wall{grid-template-columns:minmax(0,.85fr) minmax(0,1fr);gap:22px}
 }
 @media (max-width:820px){
   .g{grid-template-columns:repeat(4,minmax(0,1fr));column-gap:16px}
@@ -344,6 +354,7 @@ footer .lbl{color:#b39c83}
   .appr .circles{height:auto;display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:48px}
   .circ{position:static;width:100%!important}
   .appr .reveal-box{grid-template-columns:1fr;gap:12px}
+  .appr .rnav{grid-column:1;margin-top:20px}
   .appr .hint{position:absolute;left:26%;top:-32px;transform:none;gap:4px;z-index:3;background:none;padding:0}
   .appr .hint svg{width:64px;height:28px;transform:none}
   .appr .hint span{font-size:18px}
@@ -391,8 +402,8 @@ footer .lbl{color:#b39c83}
   .sec{padding-block:clamp(64px,10vw,110px)}
   .cases .rail{padding-bottom:20px}
   .cases{padding-bottom:clamp(40px,7vw,70px)}
-  .rev .wall{display:flex;grid-template-columns:none;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 0 18px;scrollbar-width:thin;scrollbar-color:var(--wine) transparent;margin-inline:calc(var(--gut)*-1);padding-inline:var(--gut)}
-  .rev .col{flex:0 0 82vw;scroll-snap-align:center;gap:18px}
+  .rev .wall{display:flex;grid-template-columns:none;align-items:stretch;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 0 18px;scrollbar-width:thin;scrollbar-color:var(--wine) transparent;margin-inline:calc(var(--gut)*-1);padding-inline:var(--gut)}
+  .rev .col{flex:0 0 82vw;scroll-snap-align:center;gap:18px;justify-content:space-between}
   .rev .swipe{display:flex;justify-content:flex-end;margin-top:-6px}
   .slot{padding:12px 12px 14px}
   .rev .col .slot:nth-child(1){transform:rotate(-.6deg)}
@@ -484,6 +495,7 @@ footer .lbl{color:#b39c83}
     <div class="reveal-box" id="revealBox" aria-live="polite">
       <div class="rlabel lbl" id="revealLabel">Точка впливу</div>
       <div class="rtext" id="revealText"><p class="big">Насамперед я знаходжу точку впливу. Потім скеровую туди рекламний бюджет.</p></div>
+      <div class="rnav" id="revealNav"><button type="button" class="pv" id="rPrev" aria-label="Попередній етап"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15.5 4.5 8 12l7.5 7.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><button type="button" class="nx" id="rNext" aria-label="Наступний етап"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8.5 4.5 16 12l-7.5 7.5" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></button><span class="cnt" id="rCnt"></span></div>
     </div>
   </div>
 </section>
@@ -582,7 +594,7 @@ footer .lbl{color:#b39c83}
     <span class="lbl swipe" aria-hidden="true">Гортайте →</span>
     <div class="wall">
       <div class="col big">
-        <figure class="slot big"><span class="tape"></span><img src="../img/reviews/r7.webp" alt="Відгук клієнта в листуванні" loading="lazy" width="820" height="872"><figcaption class="cap"><span>Відгук 01</span></figcaption></figure>
+        <figure class="slot big"><span class="tape"></span><img src="../img/reviews/r7.webp" alt="Відгук клієнта в листуванні" loading="lazy" width="820" height="1271"><figcaption class="cap"><span>Відгук 01</span></figcaption></figure>
       </div>
       <div class="col">
         <figure class="slot"><span class="tape"></span><img src="../img/reviews/r1.webp" alt="Відгук клієнта в листуванні" loading="lazy" width="900" height="417"><figcaption class="cap"><span>Відгук 02</span></figcaption></figure>
@@ -752,8 +764,18 @@ function initPage(){
       lab.textContent=data[k][0];
       box.innerHTML=data[k][1].split('|').map(function(t){return '<p>'+t+'</p>'}).join('');
     }
+    var nav=document.getElementById('revealNav'),pv=document.getElementById('rPrev'),nx=document.getElementById('rNext'),cnt=document.getElementById('rCnt');
+    function idx(){for(var i=0;i<btns.length;i++){if(btns[i].getAttribute('aria-pressed')==='true')return i}return -1}
+    function syncNav(){var i=idx();
+      if(i<0){nav.classList.remove('on');return}
+      nav.classList.add('on');pv.disabled=i===0;nx.disabled=i===btns.length-1;
+      cnt.textContent='0'+(i+1)+' / 0'+btns.length;}
+    function step(d){var i=idx();if(i<0)return;var j=i+d;if(j<0||j>=btns.length)return;
+      show(btns[j].dataset.k,btns[j]);syncNav();}
+    pv.addEventListener('click',function(){step(-1)});
+    nx.addEventListener('click',function(){step(1)});
     btns.forEach(function(b){b.addEventListener('click',function(){
-      show(b.dataset.k,b);
+      show(b.dataset.k,b);syncNav();
       if(b.getAttribute('aria-pressed')==='true'){
         var rb=document.getElementById('revealBox');
         if(rb&&rb.scrollIntoView)rb.scrollIntoView({block:'center',behavior:'smooth'});
