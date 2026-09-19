@@ -209,7 +209,8 @@ a{color:inherit}
 .cases h2{font-size:clamp(60px,11vw,184px)}
 .cases .sub{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:16px}
 .cases .sub p{margin:0;font:800 clamp(20px,2vw,28px)/1 var(--disp);text-transform:uppercase}
-.rail{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;padding:10px var(--gut) 40px;scrollbar-width:thin;scrollbar-color:var(--wine) transparent}
+.rail{display:flex;gap:20px;overflow-x:auto;scroll-snap-type:x mandatory;padding:10px var(--gut) 30px;scrollbar-width:none;-ms-overflow-style:none}
+.rail::-webkit-scrollbar{width:0;height:0;display:none}
 .card{flex:0 0 clamp(290px,31vw,440px);scroll-snap-align:start;background:var(--ink);color:var(--paper);position:relative;display:flex;flex-direction:column;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
 .card:hover{transform:translateY(-6px) rotate(-.6deg)}
 .card::before{content:"";position:absolute;inset:0;background:var(--grain);opacity:.55;mix-blend-mode:screen;pointer-events:none}
