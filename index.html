@@ -267,11 +267,20 @@ a{color:inherit}
 /* REVIEWS */
 .rev{background:var(--paper2)}
 .rev h2{grid-column:1/13;font-size:clamp(52px,8.2vw,140px);margin-bottom:clamp(48px,6vw,80px)}
-.rev .slots{grid-column:1/13;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:28px}
-.slot{position:relative;aspect-ratio:9/16;background:#fbf8f2;border:1px solid var(--line);display:flex;flex-direction:column;justify-content:space-between;padding:18px;box-shadow:0 22px 36px -26px rgba(36,35,33,.55)}
-.slot:nth-child(1){transform:rotate(-2.5deg)}.slot:nth-child(2){transform:rotate(1.8deg) translateY(40px)}.slot:nth-child(3){transform:rotate(-1.2deg)}.slot:nth-child(4){transform:rotate(2.6deg) translateY(30px)}
-.slot .tape{top:-14px;left:50%;margin-left:-60px}
-.slot p{margin:0;font:800 26px/.95 var(--disp);text-transform:uppercase;color:rgba(36,35,33,.35)}
+
+
+
+
+
+
+.rev .slots{grid-column:1/13;column-count:3;column-gap:28px}
+.slot{position:relative;break-inside:avoid;margin:0 0 34px;background:#fbf8f2;border:1px solid var(--line);padding:14px 14px 16px;box-shadow:0 22px 40px -28px rgba(36,35,33,.55)}
+.slot:nth-child(3n+1){transform:rotate(-1.2deg)}
+.slot:nth-child(3n+2){transform:rotate(.9deg)}
+.slot:nth-child(3n+3){transform:rotate(-.5deg)}
+.slot img{display:block;width:100%;height:auto;border-radius:2px}
+.slot .tape{top:-13px;left:50%;margin-left:-58px;width:116px}
+.slot .cap{display:flex;justify-content:space-between;gap:10px;margin-top:10px;font:500 9.5px/1 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--tob)}
 
 /* FAQ */
 .faq .side{grid-column:1/6}
@@ -316,7 +325,7 @@ footer .lbl{color:#b39c83}
 
 @media (max-width:1000px){
   .pains .notes{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:48px}
-  .rev .slots{grid-template-columns:repeat(2,minmax(0,1fr));row-gap:56px}
+  .rev .slots{column-count:2}
 }
 @media (max-width:820px){
   .g{grid-template-columns:repeat(4,minmax(0,1fr));column-gap:16px}
@@ -379,11 +388,11 @@ footer .lbl{color:#b39c83}
   .sec{padding-block:clamp(64px,10vw,110px)}
   .cases .rail{padding-bottom:20px}
   .cases{padding-bottom:clamp(40px,7vw,70px)}
-  .rev .slots{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;row-gap:20px;align-items:start}
-  .slot:nth-child(1),.slot:nth-child(2),.slot:nth-child(3),.slot:nth-child(4){transform:rotate(-.8deg)}
-  .slot{aspect-ratio:3/5;padding:12px}
-  .slot p{font-size:18px}
-  .slot .tape{width:80px;margin-left:-40px}
+  .rev .slots{column-count:1;column-gap:0}
+  .slot{margin:0 0 26px;padding:12px 12px 14px}
+  .slot:nth-child(n){transform:rotate(-.6deg)}
+  .slot:nth-child(even){transform:rotate(.7deg)}
+  .slot .tape{width:92px;margin-left:-46px}
 }
 @media (min-width:821px){
   .rev h2{white-space:nowrap}
@@ -565,10 +574,12 @@ footer .lbl{color:#b39c83}
   <div class="wrap g">
     <h2 class="disp">Что говорят <span class="paint it">клиенты</span></h2>
     <div class="slots">
-      <div class="slot"><span class="tape"></span><span class="lbl">Отзыв 01</span><p>Скриншот переписки</p></div>
-      <div class="slot"><span class="tape"></span><span class="lbl">Отзыв 02</span><p>Скриншот переписки</p></div>
-      <div class="slot"><span class="tape"></span><span class="lbl">Отзыв 03</span><p>Скриншот переписки</p></div>
-      <div class="slot"><span class="tape"></span><span class="lbl">Отзыв 04</span><p>Скриншот переписки</p></div>
+      <figure class="slot"><span class="tape"></span><img src="img/reviews/r1.webp" alt="Отзыв клиента в переписке" loading="lazy" width="900" height="417"><figcaption class="cap"><span>Отзыв 01</span><span>Telegram</span></figcaption></figure>
+      <figure class="slot"><span class="tape"></span><img src="img/reviews/r2.webp" alt="Отзыв клиента в переписке" loading="lazy" width="900" height="566"><figcaption class="cap"><span>Отзыв 02</span><span>Telegram</span></figcaption></figure>
+      <figure class="slot"><span class="tape"></span><img src="img/reviews/r3.webp" alt="Отзыв клиента в переписке" loading="lazy" width="900" height="199"><figcaption class="cap"><span>Отзыв 03</span><span>Telegram</span></figcaption></figure>
+      <figure class="slot"><span class="tape"></span><img src="img/reviews/r4.webp" alt="Отзыв клиента в переписке" loading="lazy" width="808" height="182"><figcaption class="cap"><span>Отзыв 04</span><span>Telegram</span></figcaption></figure>
+      <figure class="slot"><span class="tape"></span><img src="img/reviews/r5.webp" alt="Отзыв клиента в переписке" loading="lazy" width="724" height="182"><figcaption class="cap"><span>Отзыв 05</span><span>Telegram</span></figcaption></figure>
+      <figure class="slot"><span class="tape"></span><img src="img/reviews/r6.webp" alt="Отзыв клиента в переписке" loading="lazy" width="900" height="158"><figcaption class="cap"><span>Отзыв 06</span><span>Telegram</span></figcaption></figure>
     </div>
   </div>
 </section>
