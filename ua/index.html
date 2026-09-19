@@ -273,6 +273,7 @@ a{color:inherit}
 
 
 
+.rev .swipe{display:none;grid-column:1/13}
 .rev .wall{grid-column:1/13;display:grid;grid-template-columns:minmax(0,37%) minmax(0,1fr);gap:28px;align-items:start}
 .rev .rest{column-count:2;column-gap:28px}
 .slot.big{margin-bottom:0;transform:rotate(-.8deg)}
@@ -393,8 +394,11 @@ footer .lbl{color:#b39c83}
   .cases .rail{padding-bottom:20px}
   .cases{padding-bottom:clamp(40px,7vw,70px)}
   .rev .wall{grid-template-columns:1fr;gap:0}
-  .rev .rest{column-count:1;column-gap:0}
-  .slot.big{margin-bottom:26px}
+  .slot.big{margin-bottom:22px}
+  .rev .rest{column-count:initial;display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;padding:6px 0 18px;scrollbar-width:thin;scrollbar-color:var(--wine) transparent;margin-inline:calc(var(--gut)*-1);padding-inline:var(--gut)}
+  .rev .rest .slot{flex:0 0 76vw;scroll-snap-align:center;margin:0;display:flex;flex-direction:column;justify-content:center}
+  .rev .rest .slot img{margin-block:auto}
+  .rev .swipe{display:flex;justify-content:flex-end;margin-top:-6px}
   .slot{margin:0 0 26px;padding:12px 12px 14px}
   .slot:nth-child(n){transform:rotate(-.6deg)}
   .slot:nth-child(even){transform:rotate(.7deg)}
@@ -579,6 +583,7 @@ footer .lbl{color:#b39c83}
   <div class="edge" style="top:-1px"><svg viewBox="0 0 1200 60" preserveAspectRatio="none"><path class="tearPaper" fill="#F4F0E8"/></svg></div>
   <div class="wrap g">
     <h2 class="disp">Що кажуть <span class="paint it">клієнти</span></h2>
+    <span class="lbl swipe" aria-hidden="true">Гортайте →</span>
     <div class="wall">
       <figure class="slot big"><span class="tape"></span><img src="../img/reviews/r7.webp" alt="Відгук клієнта в листуванні" loading="lazy" width="820" height="872"><figcaption class="cap"><span>Відгук 07</span></figcaption></figure>
       <div class="rest">
