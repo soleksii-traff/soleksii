@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="robots" content="noindex">
+<title>Страница не найдена — Алексей Савченко</title>
+<link rel="icon" href="/soleksii/img/favicon.svg?v=5" type="image/svg+xml">
+<link rel="icon" href="/soleksii/img/favicon-32.png?v=5" sizes="32x32">
+<link rel="apple-touch-icon" href="/soleksii/img/apple-touch-icon.png?v=5">
+<meta name="theme-color" content="#F4F0E8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,700&family=Sofia+Sans+Extra+Condensed:wght@800;900&family=Manrope:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap">
+<style>
+:root{
+  --paper:#F4F0E8;--ink:#242321;--wine:#641F2A;--tob:#8A7057;
+  --disp:"Sofia Sans Extra Condensed","Arial Narrow",Impact,sans-serif;
+  --ital:"Playfair Display",Georgia,serif;
+  --sans:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+  --gut:clamp(16px,4vw,56px)
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:400 16px/1.6 var(--sans);
+  -webkit-font-smoothing:antialiased;min-height:100vh;display:flex;flex-direction:column;overflow-x:hidden}
+.wrap{max-width:1440px;margin:0 auto;padding-inline:var(--gut);width:100%}
+header{padding-block:28px}
+.brand{font:800 clamp(16px,1.5vw,19px)/1 var(--disp);letter-spacing:.04em;text-transform:uppercase;color:var(--wine);text-decoration:none;display:block}
+.brand small{display:block;margin-top:6px;font:500 10px/1 var(--mono);letter-spacing:.18em;color:var(--tob)}
+main{flex:1;display:flex;align-items:center;padding-block:clamp(48px,9vw,110px)}
+.num{font:900 clamp(120px,26vw,340px)/.8 var(--disp);letter-spacing:-.01em;margin:0 0 6px;
+  color:transparent;-webkit-text-stroke:2px var(--ink)}
+h1{font:900 clamp(40px,7.4vw,104px)/.92 var(--disp);text-transform:uppercase;margin:0 0 22px;max-width:14ch}
+h1 .it{font-family:var(--ital);font-style:italic;font-weight:700;text-transform:none;font-size:.92em;
+  color:var(--paper);background:var(--wine);padding:0 .16em;display:inline-block;position:relative;top:-.06em;line-height:1}
+p.lead{margin:0 0 34px;max-width:46ch;font-size:clamp(16px,1.5vw,19px);color:rgba(36,35,33,.72)}
+.cta{display:flex;flex-wrap:wrap;gap:14px}
+.btn{display:inline-flex;align-items:center;gap:12px;padding:17px 26px;border-radius:4px;
+  font:600 14px/1 var(--sans);text-transform:uppercase;letter-spacing:.06em;text-decoration:none;
+  border:1px solid var(--ink);transition:background .45s ease,color .45s ease,border-color .45s ease}
+.btn.p{background:var(--ink);color:var(--paper)}
+.btn.p:hover{background:var(--wine);border-color:var(--wine)}
+.btn.s{background:transparent;color:var(--ink)}
+.btn.s:hover{color:var(--wine);border-color:var(--wine)}
+.btn .ar{transition:transform .45s ease}.btn:hover .ar{transform:translateX(4px)}
+footer{padding-block:26px;border-top:1px solid rgba(36,35,33,.2)}
+footer .row{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+.lbl{font:500 11px/1.4 var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--tob);text-decoration:none}
+a.lbl:hover{color:var(--wine)}
+@media (max-width:560px){.cta .btn{flex:1 1 100%;justify-content:center}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><a class="brand" href="/soleksii/" id="home1">OLEKSII SAVCHENKO<small>PERFORMANCE MARKETING</small></a></div></header>
+
+<main><div class="wrap">
+  <p class="num" aria-hidden="true">404</p>
+  <h1 id="t">Такой страницы <span class="it">нет</span></h1>
+  <p class="lead" id="d">Возможно, ссылка устарела или в адресе опечатка. Вернитесь на главную — там всё на месте.</p>
+  <div class="cta">
+    <a class="btn p" href="/soleksii/" id="b1">На главную <span class="ar">→</span></a>
+    <a class="btn s" href="https://t.me/savleksi" target="_blank" rel="noopener" id="b2">Написать в Telegram</a>
+  </div>
+</div></main>
+
+<footer><div class="wrap"><div class="row">
+  <span class="lbl" id="f1">Алексей Савченко · Meta Ads</span>
+  <a class="lbl" href="/soleksii/privacy/" id="f2">Политика конфиденциальности</a>
+</div></div></footer>
+
+<script>
+(function(){
+  if(location.pathname.indexOf('/ua/')===-1)return;
+  document.documentElement.lang='uk';
+  document.title='Сторінку не знайдено — Олексій Савченко';
+  document.getElementById('t').innerHTML='Такої сторінки <span class="it">немає</span>';
+  document.getElementById('d').textContent='Можливо, посилання застаріло або в адресі помилка. Поверніться на головну — там усе на місці.';
+  document.getElementById('b1').innerHTML='На головну <span class="ar">→</span>';
+  document.getElementById('b2').textContent='Написати в Telegram';
+  document.getElementById('f1').textContent='Олексій Савченко · Meta Ads';
+  document.getElementById('f2').textContent='Політика конфіденційності';
+  document.getElementById('b1').href='/soleksii/ua/';
+  document.getElementById('home1').href='/soleksii/ua/';
+  document.getElementById('f2').href='/soleksii/ua/privacy/';
+})();
+</script>
+</body>
+</html>

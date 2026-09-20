@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://soleksii-traff.github.io/soleksii/sitemap.xml

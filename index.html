@@ -665,7 +665,7 @@ footer .lbl{color:#b39c83}
     </div>
   </div>
 </section>
-<footer><div class="wrap"><span class="lbl">Алексей Савченко · Meta Ads</span><span class="lbl">© 2026</span></div></footer>
+<footer><div class="wrap"><span class="lbl">Алексей Савченко · Meta Ads</span><a class="lbl" href="privacy/">Политика конфиденциальности</a><span class="lbl">© 2026</span></div></footer>
 </div><!-- /#page -->
 
 <div class="bar">
@@ -807,6 +807,29 @@ function initPage(){
 })();
 }
 initPage();
+
+/* Отправка события при клике по контактам.
+   Работает с Meta Pixel (fbq), Google Analytics (gtag) и GTM (dataLayer).
+   Пока пиксель не подключён — событие просто уходит в dataLayer и ничего не ломает. */
+(function(){
+  function track(name,p){
+    var d={event:name},k; for(k in p){d[k]=p[k];}
+    try{window.dataLayer=window.dataLayer||[];window.dataLayer.push(d);}catch(e){}
+    try{if(typeof fbq==='function')fbq('track','Contact',p);}catch(e){}
+    try{if(typeof gtag==='function')gtag('event',name,p);}catch(e){}
+  }
+  var links=document.querySelectorAll('a[href*="t.me/"],a[href*="wa.me/"]');
+  [].forEach.call(links,function(a){
+    var ch=a.href.indexOf('t.me/')>-1?'telegram':'whatsapp';
+    a.addEventListener('click',function(){
+      var sec=a.closest?a.closest('section'):null;
+      var place='hero';
+      if(a.closest&&a.closest('.bar'))place='bar';
+      else if(sec)place=sec.id||String(sec.className).split(' ')[1]||'section';
+      track('contact_click',{method:ch,place:place,lang:document.documentElement.lang});
+    });
+  });
+})();
 </script>
 
 
