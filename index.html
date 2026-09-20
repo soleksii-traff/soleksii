@@ -339,6 +339,8 @@ a{color:inherit}
 footer{background:var(--ink);color:var(--paper)}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;padding-block:24px 96px}
 footer .lbl{color:#b39c83}
+footer a.lbl{text-decoration:none;transition:color .3s ease}
+footer a.lbl:hover{color:var(--paper)}
 
 /* sticky bar */
 .bar{position:fixed;left:0;right:0;bottom:0;z-index:40;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:14px var(--gut) calc(14px + env(safe-area-inset-bottom,0px));pointer-events:none}
