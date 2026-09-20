@@ -382,7 +382,11 @@ footer a.lbl:hover{color:var(--paper)}
   .prow{grid-template-columns:44px 1fr;gap:8px 12px}
   .prow p{grid-column:2}
   .strat .poster{margin-bottom:56px}
-  .about .stage{aspect-ratio:4/5;margin-bottom:36px}
+  .about .stage{aspect-ratio:4/5;margin-bottom:0;order:2}
+  .about .wrap{display:flex;flex-direction:column;gap:26px}
+  .about .txt{display:contents}
+  .about .txt>*{order:3}
+  .about .txt>h2{order:1}
   .pains .notes{grid-template-columns:1fr}
   .note-c:nth-child(n){transform:rotate(-1deg)}
   .pains .notes{row-gap:28px}
