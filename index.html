@@ -276,7 +276,7 @@ a{color:inherit}
 .about .stage{grid-column:1/7;position:relative;aspect-ratio:3/4}
 .about .stage .frame{position:absolute;inset:0;overflow:hidden;box-shadow:0 26px 50px -30px rgba(36,35,33,.55)}
 .about .stage .bgp{position:absolute;inset:0;background:var(--bgos) center/cover no-repeat}
-.about .stage .fig{position:absolute;left:3%;right:3%;top:7%;bottom:0;background:var(--cut) center bottom/contain no-repeat;filter:drop-shadow(0 26px 44px rgba(36,35,33,.3))}
+.about .stage .fig{position:absolute;left:3%;top:7%;width:94%;height:93%;max-width:none;object-fit:contain;object-position:center bottom;filter:drop-shadow(0 26px 44px rgba(36,35,33,.3))}
 .about .stage .cap{position:absolute;left:14px;right:46%;bottom:14px;z-index:3;color:rgba(36,35,33,.55);font:500 clamp(8px,2.4vw,10px)/1.2 var(--mono);letter-spacing:.12em;text-transform:uppercase}
 .about .stage .tape{top:-14px;left:50%;margin-left:-60px;transform:rotate(-3deg)}
 .about .stage .tape.t2{top:auto;bottom:-12px;left:auto;right:6%;margin-left:0;transform:rotate(6deg);width:96px}
@@ -463,9 +463,185 @@ footer a.lbl:hover{color:var(--paper)}
 }
 </style>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://soleksii-traff.github.io/soleksii/#website",
+      "url": "https://soleksii-traff.github.io/soleksii/",
+      "name": "Алексей Савченко — Meta Ads",
+      "inLanguage": [
+        "ru",
+        "uk"
+      ],
+      "publisher": {
+        "@id": "https://soleksii-traff.github.io/soleksii/#person"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://soleksii-traff.github.io/soleksii/#webpage",
+      "url": "https://soleksii-traff.github.io/soleksii/",
+      "name": "Алексей Савченко — Meta Ads",
+      "description": "Performance-маркетолог Алексей Савченко. Реклама в Meta Ads: стратегия, креативы, аналитика.",
+      "inLanguage": "ru",
+      "isPartOf": {
+        "@id": "https://soleksii-traff.github.io/soleksii/#website"
+      },
+      "about": {
+        "@id": "https://soleksii-traff.github.io/soleksii/#person"
+      },
+      "primaryImageOfPage": "https://soleksii-traff.github.io/soleksii/img/og-ru.jpg",
+      "dateModified": "2026-09-23"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://soleksii-traff.github.io/soleksii/#person",
+      "name": "Алексей Савченко",
+      "alternateName": [
+        "Алексей Савченко",
+        "Олексій Савченко",
+        "Oleksii Savchenko"
+      ],
+      "jobTitle": "Performance-маркетолог",
+      "description": "Performance-маркетолог. Связываю психологию аудитории, сильный креатив и аналитику в понятную юнит-экономику.",
+      "url": "https://soleksii-traff.github.io/soleksii/",
+      "image": "https://soleksii-traff.github.io/soleksii/img/og-ru.jpg",
+      "sameAs": [
+        "https://t.me/savleksi"
+      ],
+      "knowsLanguage": [
+        "ru",
+        "uk"
+      ],
+      "knowsAbout": [
+        "Meta Ads",
+        "Таргетированная реклама",
+        "Performance-маркетинг",
+        "Анализ целевой аудитории",
+        "Customer Journey Map",
+        "Юнит-экономика",
+        "Рекламные креативы",
+        "Сквозная аналитика"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "sales",
+        "url": "https://t.me/savleksi",
+        "availableLanguage": [
+          "ru",
+          "uk"
+        ]
+      }
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://soleksii-traff.github.io/soleksii/#service",
+      "name": "Реклама в Meta Ads — Алексей Савченко",
+      "description": "Настройка и ведение рекламных кампаний в Meta Ads: анализ аудитории и конкурентов, портреты клиентов и CJM, гипотезы, креативы, запуск и еженедельная оптимизация.",
+      "url": "https://soleksii-traff.github.io/soleksii/",
+      "image": "https://soleksii-traff.github.io/soleksii/img/og-ru.jpg",
+      "provider": {
+        "@id": "https://soleksii-traff.github.io/soleksii/#person"
+      },
+      "serviceType": "Настройка и ведение рекламы в Meta Ads",
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "Испания"
+        },
+        {
+          "@type": "Country",
+          "name": "Украина"
+        },
+        {
+          "@type": "Country",
+          "name": "ОАЭ"
+        },
+        {
+          "@type": "Country",
+          "name": "США"
+        }
+      ],
+      "availableLanguage": [
+        "ru",
+        "uk"
+      ],
+      "offers": {
+        "@type": "Offer",
+        "price": "350",
+        "priceCurrency": "EUR",
+        "description": "Стоимость работы от 350 €. Точная цена зависит от объёма задач. Стратегия готовится бесплатно до начала сотрудничества.",
+        "url": "https://soleksii-traff.github.io/soleksii/#contact"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://soleksii-traff.github.io/soleksii/#faq",
+      "inLanguage": "ru",
+      "isPartOf": {
+        "@id": "https://soleksii-traff.github.io/soleksii/#webpage"
+      },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Сколько стоит моя работа?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "От 350 €. Точная стоимость зависит от объёма задач, назову её после созвона и брифа."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Какой нужен рекламный бюджет?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Оптимальный бюджет — от $150 в неделю. Всё индивидуально: подберу стратегию под ваш бизнес и возможности."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "С какими нишами работаете?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "С разными: медицина, услуги, авто, образование, ремонт. Подход универсален, потому что он начинается с анализа именно вашей аудитории."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Как я узнаю о результатах?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Каждую неделю отправляю информативный отчёт документом и провожу короткий созвон: что сделано, какие цифры, что делаем дальше."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "С какими странами работаете?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Настраиваю рекламу на любые гео, доступные в Meta Ads. В кейсах — клиенты из Испании, ОАЭ, США и Украины."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Когда будут первые результаты?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Первые заявки обычно приходят в течение суток после запуска. Сроки стабильного результата зависят от ниши, бюджета на тесты и того, насколько быстро находится рабочая связка. Честный прогноз дам после анализа вашего проекта, в бесплатной стратегии."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div id="page">
+<main>
 <div class="wrap">
   <nav class="nav">
     <a class="nm" href="#"><b>Oleksii Savchenko</b><small>Performance Marketing</small></a>
@@ -598,7 +774,7 @@ footer a.lbl:hover{color:var(--paper)}
     <div class="stage">
       <div class="frame">
         <div class="bgp"></div>
-        <div class="fig"></div>
+        <img class="fig" src="img/portrait-cut.webp" alt="Алексей Савченко, performance-маркетолог" width="932" height="1400" loading="lazy" decoding="async">
         <span class="cap">Barcelona · 2026</span>
       </div>
       <span class="tape"></span>
@@ -624,17 +800,17 @@ footer a.lbl:hover{color:var(--paper)}
     <span class="lbl swipe" aria-hidden="true">Листайте →</span>
     <div class="wall">
       <div class="col big">
-        <figure class="slot big"><span class="tape"></span><img src="img/reviews/r7b.webp" alt="Отзыв клиента в переписке" loading="lazy" width="820" height="1271"><figcaption class="cap"><span>Отзыв 01</span></figcaption></figure>
+        <figure class="slot big"><span class="tape"></span><img src="img/reviews/r7b.webp" alt="Развёрнутый отзыв клиента в Telegram: о подходе, стратегии и качестве креативов" loading="lazy" width="820" height="1271"><figcaption class="cap"><span>Отзыв 01</span></figcaption></figure>
       </div>
       <div class="col">
-        <figure class="slot"><span class="tape"></span><img src="img/reviews/r1.webp" alt="Отзыв клиента в переписке" loading="lazy" width="900" height="417"><figcaption class="cap"><span>Отзыв 02</span></figcaption></figure>
-        <figure class="slot"><span class="tape"></span><img src="img/reviews/r3.webp" alt="Отзыв клиента в переписке" loading="lazy" width="900" height="199"><figcaption class="cap"><span>Отзыв 03</span></figcaption></figure>
-        <figure class="slot"><span class="tape"></span><img src="img/reviews/r5.webp" alt="Отзыв клиента в переписке" loading="lazy" width="750" height="180"><figcaption class="cap"><span>Отзыв 04</span></figcaption></figure>
+        <figure class="slot"><span class="tape"></span><img src="img/reviews/r1.webp" alt="Отзыв клиента: закрыли запись на две недели вперёд" loading="lazy" width="900" height="417"><figcaption class="cap"><span>Отзыв 02</span></figcaption></figure>
+        <figure class="slot"><span class="tape"></span><img src="img/reviews/r3.webp" alt="Отзыв клиента о профессионализме и качестве услуги" loading="lazy" width="900" height="199"><figcaption class="cap"><span>Отзыв 03</span></figcaption></figure>
+        <figure class="slot"><span class="tape"></span><img src="img/reviews/r5.webp" alt="Отзыв клиента: результат не может не радовать" loading="lazy" width="750" height="180"><figcaption class="cap"><span>Отзыв 04</span></figcaption></figure>
       </div>
       <div class="col">
-        <figure class="slot"><span class="tape"></span><img src="img/reviews/r2.webp" alt="Отзыв клиента в переписке" loading="lazy" width="900" height="566"><figcaption class="cap"><span>Отзыв 05</span></figcaption></figure>
-        <figure class="slot"><span class="tape"></span><img src="img/reviews/r4.webp" alt="Отзыв клиента в переписке" loading="lazy" width="750" height="162"><figcaption class="cap"><span>Отзыв 06</span></figcaption></figure>
-        <figure class="slot"><span class="tape"></span><img src="img/reviews/r6.webp" alt="Отзыв клиента в переписке" loading="lazy" width="900" height="158"><figcaption class="cap"><span>Отзыв 07</span></figcaption></figure>
+        <figure class="slot"><span class="tape"></span><img src="img/reviews/r2.webp" alt="Отзыв клиента: закрыл последнего клиента на онлайн-ведение" loading="lazy" width="900" height="566"><figcaption class="cap"><span>Отзыв 05</span></figcaption></figure>
+        <figure class="slot"><span class="tape"></span><img src="img/reviews/r4.webp" alt="Отзыв клиента: хорошая цена за контакт при высоком качестве" loading="lazy" width="750" height="162"><figcaption class="cap"><span>Отзыв 06</span></figcaption></figure>
+        <figure class="slot"><span class="tape"></span><img src="img/reviews/r6.webp" alt="Отзыв клиента: еле успеваем обрабатывать заявки" loading="lazy" width="900" height="158"><figcaption class="cap"><span>Отзыв 07</span></figcaption></figure>
       </div>
     </div>
   </div>
@@ -673,6 +849,7 @@ footer a.lbl:hover{color:var(--paper)}
     </div>
   </div>
 </section>
+</main>
 <footer><div class="wrap"><span class="lbl">Алексей Савченко · Meta Ads</span><a class="lbl" href="privacy/">Политика конфиденциальности</a><span class="lbl">© 2026</span></div></footer>
 </div><!-- /#page -->
 

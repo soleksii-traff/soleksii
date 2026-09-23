@@ -276,7 +276,7 @@ a{color:inherit}
 .about .stage{grid-column:1/7;position:relative;aspect-ratio:3/4}
 .about .stage .frame{position:absolute;inset:0;overflow:hidden;box-shadow:0 26px 50px -30px rgba(36,35,33,.55)}
 .about .stage .bgp{position:absolute;inset:0;background:var(--bgos) center/cover no-repeat}
-.about .stage .fig{position:absolute;left:3%;right:3%;top:7%;bottom:0;background:var(--cut) center bottom/contain no-repeat;filter:drop-shadow(0 26px 44px rgba(36,35,33,.3))}
+.about .stage .fig{position:absolute;left:3%;top:7%;width:94%;height:93%;max-width:none;object-fit:contain;object-position:center bottom;filter:drop-shadow(0 26px 44px rgba(36,35,33,.3))}
 .about .stage .cap{position:absolute;left:14px;right:46%;bottom:14px;z-index:3;color:rgba(36,35,33,.55);font:500 clamp(8px,2.4vw,10px)/1.2 var(--mono);letter-spacing:.12em;text-transform:uppercase}
 .about .stage .tape{top:-14px;left:50%;margin-left:-60px;transform:rotate(-3deg)}
 .about .stage .tape.t2{top:auto;bottom:-12px;left:auto;right:6%;margin-left:0;transform:rotate(6deg);width:96px}
@@ -463,9 +463,185 @@ footer a.lbl:hover{color:var(--paper)}
 }
 </style>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://soleksii-traff.github.io/soleksii/#website",
+      "url": "https://soleksii-traff.github.io/soleksii/",
+      "name": "Олексій Савченко — Meta Ads",
+      "inLanguage": [
+        "ru",
+        "uk"
+      ],
+      "publisher": {
+        "@id": "https://soleksii-traff.github.io/soleksii/#person"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://soleksii-traff.github.io/soleksii/ua/#webpage",
+      "url": "https://soleksii-traff.github.io/soleksii/ua/",
+      "name": "Олексій Савченко — Meta Ads",
+      "description": "Performance-маркетолог Олексій Савченко. Реклама в Meta Ads: стратегія, креативи, аналітика.",
+      "inLanguage": "uk",
+      "isPartOf": {
+        "@id": "https://soleksii-traff.github.io/soleksii/#website"
+      },
+      "about": {
+        "@id": "https://soleksii-traff.github.io/soleksii/#person"
+      },
+      "primaryImageOfPage": "https://soleksii-traff.github.io/soleksii/img/og-ua.jpg",
+      "dateModified": "2026-09-23"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://soleksii-traff.github.io/soleksii/#person",
+      "name": "Олексій Савченко",
+      "alternateName": [
+        "Алексей Савченко",
+        "Олексій Савченко",
+        "Oleksii Savchenko"
+      ],
+      "jobTitle": "Performance-маркетолог",
+      "description": "Performance-маркетолог. Повʼязую психологію аудиторії, сильний креатив і аналітику в зрозумілу юніт-економіку.",
+      "url": "https://soleksii-traff.github.io/soleksii/ua/",
+      "image": "https://soleksii-traff.github.io/soleksii/img/og-ua.jpg",
+      "sameAs": [
+        "https://t.me/savleksi"
+      ],
+      "knowsLanguage": [
+        "ru",
+        "uk"
+      ],
+      "knowsAbout": [
+        "Meta Ads",
+        "Таргетована реклама",
+        "Performance-маркетинг",
+        "Аналіз цільової аудиторії",
+        "Customer Journey Map",
+        "Юніт-економіка",
+        "Рекламні креативи",
+        "Наскрізна аналітика"
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "sales",
+        "url": "https://t.me/savleksi",
+        "availableLanguage": [
+          "ru",
+          "uk"
+        ]
+      }
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://soleksii-traff.github.io/soleksii/#service",
+      "name": "Реклама в Meta Ads — Олексій Савченко",
+      "description": "Налаштування та ведення рекламних кампаній у Meta Ads: аналіз аудиторії та конкурентів, портрети клієнтів і CJM, гіпотези, креативи, запуск і щотижнева оптимізація.",
+      "url": "https://soleksii-traff.github.io/soleksii/ua/",
+      "image": "https://soleksii-traff.github.io/soleksii/img/og-ua.jpg",
+      "provider": {
+        "@id": "https://soleksii-traff.github.io/soleksii/#person"
+      },
+      "serviceType": "Налаштування та ведення реклами в Meta Ads",
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "Іспанія"
+        },
+        {
+          "@type": "Country",
+          "name": "Україна"
+        },
+        {
+          "@type": "Country",
+          "name": "ОАЕ"
+        },
+        {
+          "@type": "Country",
+          "name": "США"
+        }
+      ],
+      "availableLanguage": [
+        "ru",
+        "uk"
+      ],
+      "offers": {
+        "@type": "Offer",
+        "price": "350",
+        "priceCurrency": "EUR",
+        "description": "Вартість роботи від 350 €. Точна ціна залежить від обсягу задач. Стратегія готується безкоштовно до початку співпраці.",
+        "url": "https://soleksii-traff.github.io/soleksii/ua/#contact"
+      }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://soleksii-traff.github.io/soleksii/ua/#faq",
+      "inLanguage": "uk",
+      "isPartOf": {
+        "@id": "https://soleksii-traff.github.io/soleksii/ua/#webpage"
+      },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Скільки коштує моя робота?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Від 350 €. Точна вартість залежить від обсягу задач, назву її після дзвінка та брифу."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Який потрібен рекламний бюджет?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Оптимальний бюджет — від $150 на тиждень. Усе індивідуально: підберу стратегію під ваш бізнес і можливості."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "З якими нішами працюєте?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "З різними: медицина, послуги, авто, освіта, ремонт. Підхід універсальний, бо він починається з аналізу саме вашої аудиторії."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Як я дізнаюся про результати?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Щотижня надсилаю інформативний звіт документом і проводжу короткий дзвінок: що зроблено, які цифри, що робимо далі."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "З якими країнами працюєте?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Налаштовую рекламу на будь-які гео, доступні в Meta Ads. У кейсах — клієнти з Іспанії, ОАЕ, США та України."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Коли будуть перші результати?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Перші заявки зазвичай надходять протягом доби після запуску. Терміни стабільного результату залежать від ніші, бюджету на тести й того, як швидко знайдеться робоча звʼязка. Чесний прогноз дам після аналізу вашого проєкту, у безкоштовній стратегії."
+          }
+        }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <div id="page">
+<main>
 <div class="wrap">
   <nav class="nav">
     <a class="nm" href="#"><b>Oleksii Savchenko</b><small>Performance Marketing</small></a>
@@ -598,7 +774,7 @@ footer a.lbl:hover{color:var(--paper)}
     <div class="stage">
       <div class="frame">
         <div class="bgp"></div>
-        <div class="fig"></div>
+        <img class="fig" src="../img/portrait-cut.webp" alt="Олексій Савченко, performance-маркетолог" width="932" height="1400" loading="lazy" decoding="async">
         <span class="cap">Barcelona · 2026</span>
       </div>
       <span class="tape"></span>
@@ -624,17 +800,17 @@ footer a.lbl:hover{color:var(--paper)}
     <span class="lbl swipe" aria-hidden="true">Гортайте →</span>
     <div class="wall">
       <div class="col big">
-        <figure class="slot big"><span class="tape"></span><img src="../img/reviews/r7b.webp" alt="Відгук клієнта в листуванні" loading="lazy" width="820" height="1271"><figcaption class="cap"><span>Відгук 01</span></figcaption></figure>
+        <figure class="slot big"><span class="tape"></span><img src="../img/reviews/r7b.webp" alt="Розгорнутий відгук клієнта в Telegram: про підхід, стратегію та якість креативів" loading="lazy" width="820" height="1271"><figcaption class="cap"><span>Відгук 01</span></figcaption></figure>
       </div>
       <div class="col">
-        <figure class="slot"><span class="tape"></span><img src="../img/reviews/r1.webp" alt="Відгук клієнта в листуванні" loading="lazy" width="900" height="417"><figcaption class="cap"><span>Відгук 02</span></figcaption></figure>
-        <figure class="slot"><span class="tape"></span><img src="../img/reviews/r3.webp" alt="Відгук клієнта в листуванні" loading="lazy" width="900" height="199"><figcaption class="cap"><span>Відгук 03</span></figcaption></figure>
-        <figure class="slot"><span class="tape"></span><img src="../img/reviews/r5.webp" alt="Відгук клієнта в листуванні" loading="lazy" width="750" height="180"><figcaption class="cap"><span>Відгук 04</span></figcaption></figure>
+        <figure class="slot"><span class="tape"></span><img src="../img/reviews/r1.webp" alt="Відгук клієнта: закрили запис на два тижні вперед" loading="lazy" width="900" height="417"><figcaption class="cap"><span>Відгук 02</span></figcaption></figure>
+        <figure class="slot"><span class="tape"></span><img src="../img/reviews/r3.webp" alt="Відгук клієнта про професіоналізм і якість послуги" loading="lazy" width="900" height="199"><figcaption class="cap"><span>Відгук 03</span></figcaption></figure>
+        <figure class="slot"><span class="tape"></span><img src="../img/reviews/r5.webp" alt="Відгук клієнта: результат не може не тішити" loading="lazy" width="750" height="180"><figcaption class="cap"><span>Відгук 04</span></figcaption></figure>
       </div>
       <div class="col">
-        <figure class="slot"><span class="tape"></span><img src="../img/reviews/r2.webp" alt="Відгук клієнта в листуванні" loading="lazy" width="900" height="566"><figcaption class="cap"><span>Відгук 05</span></figcaption></figure>
-        <figure class="slot"><span class="tape"></span><img src="../img/reviews/r4.webp" alt="Відгук клієнта в листуванні" loading="lazy" width="750" height="162"><figcaption class="cap"><span>Відгук 06</span></figcaption></figure>
-        <figure class="slot"><span class="tape"></span><img src="../img/reviews/r6.webp" alt="Відгук клієнта в листуванні" loading="lazy" width="900" height="158"><figcaption class="cap"><span>Відгук 07</span></figcaption></figure>
+        <figure class="slot"><span class="tape"></span><img src="../img/reviews/r2.webp" alt="Відгук клієнта: закрив останнього клієнта на онлайн-ведення" loading="lazy" width="900" height="566"><figcaption class="cap"><span>Відгук 05</span></figcaption></figure>
+        <figure class="slot"><span class="tape"></span><img src="../img/reviews/r4.webp" alt="Відгук клієнта: хороша ціна за контакт при високій якості" loading="lazy" width="750" height="162"><figcaption class="cap"><span>Відгук 06</span></figcaption></figure>
+        <figure class="slot"><span class="tape"></span><img src="../img/reviews/r6.webp" alt="Відгук клієнта: ледве встигаємо обробляти заявки" loading="lazy" width="900" height="158"><figcaption class="cap"><span>Відгук 07</span></figcaption></figure>
       </div>
     </div>
   </div>
@@ -673,6 +849,7 @@ footer a.lbl:hover{color:var(--paper)}
     </div>
   </div>
 </section>
+</main>
 <footer><div class="wrap"><span class="lbl">Олексій Савченко · Meta Ads</span><a class="lbl" href="privacy/">Політика конфіденційності</a><span class="lbl">© 2026</span></div></footer>
 </div><!-- /#page -->
 
