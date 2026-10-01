@@ -2,31 +2,31 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://soleksii-traff.github.io/soleksii/</loc>
+    <loc>https://ostraff.com/</loc>
     <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://soleksii-traff.github.io/soleksii/"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://soleksii-traff.github.io/soleksii/ua/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://soleksii-traff.github.io/soleksii/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ostraff.com/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://ostraff.com/ua/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ostraff.com/"/>
   </url>
   <url>
-    <loc>https://soleksii-traff.github.io/soleksii/ua/</loc>
+    <loc>https://ostraff.com/ua/</loc>
     <lastmod>2026-09-20</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
-    <xhtml:link rel="alternate" hreflang="ru" href="https://soleksii-traff.github.io/soleksii/"/>
-    <xhtml:link rel="alternate" hreflang="uk" href="https://soleksii-traff.github.io/soleksii/ua/"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://soleksii-traff.github.io/soleksii/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://ostraff.com/"/>
+    <xhtml:link rel="alternate" hreflang="uk" href="https://ostraff.com/ua/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://ostraff.com/"/>
   </url>
   <url>
-    <loc>https://soleksii-traff.github.io/soleksii/privacy/</loc>
+    <loc>https://ostraff.com/privacy/</loc>
     <lastmod>2026-09-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://soleksii-traff.github.io/soleksii/ua/privacy/</loc>
+    <loc>https://ostraff.com/ua/privacy/</loc>
     <lastmod>2026-09-20</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>

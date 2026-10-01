@@ -1,4 +1,17 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://soleksii-traff.github.io/soleksii/sitemap.xml
+# Поисковые и ИИ-краулеры — доступ разрешён явно
+User-agent: Googlebot
+User-agent: Bingbot
+User-agent: Google-Extended
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: PerplexityBot
+User-agent: Applebot
+Allow: /
+
+Sitemap: https://ostraff.com/sitemap.xml
